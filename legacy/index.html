@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Développeur Fullstack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Portfolio<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text reveal">
+                    <span class="greeting">Bonjour, je suis</span>
+                    <h1 class="name">Développeur Fullstack</h1>
+                    <p class="description">Spécialisé en Laravel, React, Vue, Python et Java. Je crée des solutions web
+                        modernes, performantes et intuitives.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <h3>3+</h3>
+                            <p>Années d'Expérience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Projets Réalisés</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5</h3>
+                            <p>Langages Maîtrisés</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image reveal">
+                    <div class="img-container">
+                        <img src="assets/images/profile.jpg" alt="Photo de profil">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container reveal">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="about-content">
+                    <p>
+                        Passionné par le développement informatique, je suis un développeur polyvalent maîtrisant à la
+                        fois le Back-end et le Front-end.
+                        Avec une solide expérience en <strong>Laravel</strong>, <strong>React</strong>,
+                        <strong>Vue.js</strong>, <strong>Python</strong> et <strong>Java</strong>,
+                        j'aime relever des défis techniques et concevoir des applications intuitives et robustes.
+                    </p>
+                    <p>
+                        Mon objectif est de transformer des idées complexes en solutions numériques élégantes.
+                        Que ce soit pour une application web, un logiciel ou une automatisation, je m'engage à fournir
+                        un code de qualité.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title reveal">Mes Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <i class="fab fa-laravel"></i>
+                        <h3>Laravel</h3>
+                    </div>
+                    <div class="skill-card reveal">
+                        <i class="fab fa-react"></i>
+                        <h3>React</h3>
+                    </div>
+                    <div class="skill-card reveal">
+                        <i class="fab fa-vuejs"></i>
+                        <h3>Vue.js</h3>
+                    </div>
+                    <div class="skill-card reveal">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-card reveal">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-card reveal">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL / NoSQL</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title reveal">Mes Projets</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card reveal" id="project-1">
+                        <div class="project-image">
+                            <img src="assets/images/LandingPage.png" alt="Désignation intelligente"
+                                class="project-cover">
+                        </div>
+                        <div class="project-info">
+                            <h3>Désignation intélligente de service opérationnel</h3>
+                            <p>Une plateforme intègre l'Intélligence Artificielle et la géolocalisation pour les
+                                services opérationnels.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>React.js</span>
+                                <span>Python</span>
+                                <span>MySQL</span>
+                            </div>
+                            <a href="designation-intelligente.html" class="project-link">
+                                Voir le projet <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 Placeholder -->
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <div class="placeholder-img"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Dashboard Admin</h3>
+                            <p>Interface d'administration moderne pour la gestion de données utilisateurs.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Tailwind</span>
+                                <span>API REST</span>
+                            </div>
+                            <a href="#" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 Placeholder -->
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <div class="placeholder-img"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Analyse de Données</h3>
+                            <p>Script Python pour l'automatisation de rapports et l'analyse de tendances.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                            <a href="#" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container reveal">
+                <h2 class="section-title">Me Contacter</h2>
+                <div class="contact-content">
+                    <p>Vous avez un projet en tête ou vous souhaitez simplement échanger ? N'hésitez pas à me contacter.
+                    </p>
+                    <a href="mailto:votre.email@example.com" class="btn btn-primary">Envoyer un email</a>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
