@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getAssetPath } from '../utils/assetPath';
 
 const ProjectsFinal = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,7 +10,7 @@ const ProjectsFinal = () => {
     const projects = [
         {
             id: 1,
-            image: "/assets/images/LandingPage.png",
+            image: getAssetPath("/assets/images/LandingPage.png"),
             title: "Désignation intélligente de service opérationnel",
             description: "Une plateforme intègre l'Intélligence Artificielle et la géolocalisation pour les services opérationnels.",
             tags: ["Laravel", "React.js", "Tailwind", "Python", "MySQL"],
@@ -18,7 +19,7 @@ const ProjectsFinal = () => {
         },
         {
             id: 2,
-            image: "/assets/images/img11.png",
+            image: getAssetPath("/assets/images/img11.png"),
             title: "Géstion des locations de véhicule",
             description: "Application web pour la gestion des Locations de véhicules en temps réel",
             tags: ["React.js", "Express.js", "MySQL"],
@@ -27,7 +28,7 @@ const ProjectsFinal = () => {
         },
         {
             id: 3,
-            image: "/assets/images/capture7.png",
+            image: getAssetPath("/assets/images/capture7.png"),
             title: "Gestion de facturation",
             description: "Analyse et suivi en temps réel des factures issues des compteurs",
             tags: ["JSP", "JavaScript", "MariaDB"],
@@ -36,7 +37,7 @@ const ProjectsFinal = () => {
         },
         {
             id: 4,
-            image: "/assets/images/photo5.png",
+            image: getAssetPath("/assets/images/photo5.png"),
             title: "Analyse de données et suggestion de décision intelligente basée sur l'IA",
             description: "Application d'analyse intelligente qui identifie les zones de dangerosité et recommande des décisions stratégiques.",
             tags: ["Python", "React", "LightGBM", "IA"],
@@ -45,7 +46,7 @@ const ProjectsFinal = () => {
         },
         {
             id: 5,
-            image: "/assets/images/stock1.png",
+            image: getAssetPath("/assets/images/stock1.png"),
             title: "Gestion de Stock CISCO",
             description: "Application de gestion des manuels et kits scolaires pour la CISCO Brickaville.",
             tags: ["Laravel", "VueJS", "MySQL"],

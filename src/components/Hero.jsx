@@ -1,3 +1,5 @@
+import { getAssetPath } from '../utils/assetPath';
+
 const Hero = () => {
     return (
         <section id="home" className="hero">
@@ -29,7 +31,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image reveal">
                     <div className="img-container">
-                        <img src="/assets/images/profile.png" alt="Photo de profil" />
+                        <img src={getAssetPath('/assets/images/profile.png')} alt="Photo de profil" />
                     </div>
                 </div>
             </div>
