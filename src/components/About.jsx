@@ -7,8 +7,7 @@ const About = () => {
                     <div className="about-left">
                         <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-color)', marginBottom: '1rem' }}>HARIMBOAHANGY Mahaleo Ny Diary Vatosoa</h3>
                         <p className="about-description">
-                            Je suis un développeur web passionné avec une formation complète en informatique.
-                            Mon objectif est de créer des applications web modernes, performantes et user-friendly.
+                            Développeur web diplômé en informatique de l’ENI, spécialisé en Laravel/PHP et JavaScript (React, Vue.js, Node.js). Passionné, rigoureux et créatif, je conçois des applications web modernes, performantes et orientées utilisateur, avec une attention particulière portée à la qualité du code et à l’expérience utilisateur.
                         </p>
 
                         <div className="info-grid">
@@ -21,12 +20,12 @@ const About = () => {
                                 <span className="info-value">Fianarantsoa, Madagascar</span>
                             </div>
                             <div className="info-card">
-                                <span className="info-label">Téléphone</span>
-                                <span className="info-value">+261 33 66 973 60</span>
+                                <span className="info-label">WhatsApp</span>
+                                <span className="info-value">+261 38 66 973 60</span>
                             </div>
                             <div className="info-card">
-                                <span className="info-label">Âge</span>
-                                <span className="info-value">21 ans</span>
+                                <span className="info-label">Situation matrimoniale</span>
+                                <span className="info-value">Célibataire</span>
                             </div>
                         </div>
                     </div>
@@ -37,9 +36,11 @@ const About = () => {
                             <ul className="atouts-list">
                                 <li>Dynamique</li>
                                 <li>Adaptabilité</li>
-                                <li>Travail en équipe</li>
                                 <li>Créatif</li>
-                                <li>Motivé</li>
+                                <li>Travail en équipe</li>
+                                <li>Bonne gestion du temps</li>
+                                <li>Capacité d’écoute</li>
+                                <li>Fiabilité</li>
                             </ul>
                         </div>
                     </div>

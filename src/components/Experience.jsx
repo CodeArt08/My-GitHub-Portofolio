@@ -25,7 +25,7 @@ const Experience = () => {
                                 <div className="timeline-content">
                                     <h3>Stagiaire</h3>
                                     <span className="company">CISCO Brickaville</span>
-                                    <span className="period">Décembre 2024 à novembre 2025</span>
+                                    <span className="period"> Août 2024 – Novembre 2024</span>
                                     <p>Conception et réalisation d'une application web de gestion des entrées et sorties des manuels et kits scolaires</p>
                                 </div>
                             </div>
@@ -33,9 +33,9 @@ const Experience = () => {
                             <div className="timeline-item reveal">
                                 <div className="timeline-dot"></div>
                                 <div className="timeline-content">
-                                    <h3>Développeur logiciel à la SEMIPI</h3>
+                                    <h3>Développeur Web à la SEMIPI</h3>
                                     <span className="company">Sekoly Miaramila-Pirenena Fianarantsoa, HM, Madagascar</span>
-                                    <span className="period">D'avril 2023 à mai 2025</span>
+                                    <span className="period">Avril 2023 – Juillet 2024</span>
                                     <p>Création et intégration d'un logiciel d'AET (Ancien Enfant de Troupe)</p>
                                 </div>
                             </div>
@@ -81,9 +81,8 @@ const Experience = () => {
                             <div className="timeline-item reveal">
                                 <div className="timeline-dot"></div>
                                 <div className="timeline-content">
-                                    <h3>Diplôme de Licence Professionnnelle en Informatique</h3>
+                                    <h3>Diplôme de Licence Professionnelle en Informatique</h3>
                                     <span className="company">Ecole Nationale d'Informatique (ENI) Fianarantsoa, HM, Madagascar</span>
-                                    <span className="period">Depuis janvier 2023</span>
                                     <p>Formation en informatique, développement web et intégration système</p>
                                 </div>
                             </div>
