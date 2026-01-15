@@ -4,6 +4,7 @@ import ProjectDetails from './pages/ProjectDetails';
 import RentalManagementDetails from './pages/RentalManagementDetails';
 import DataAnalysisDetails from './pages/DataAnalysisDetails';
 import AIDecisionAnalysisDetails from './pages/AIDecisionAnalysisDetails';
+import StockManagementDetails from './pages/StockManagementDetails';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/gestion-locations" element={<RentalManagementDetails />} />
           <Route path="/analyse-donnees" element={<DataAnalysisDetails />} />
           <Route path="/analyse-ia-decision" element={<AIDecisionAnalysisDetails />} />
+          <Route path="/gestion-stock" element={<StockManagementDetails />} />
           {/* Keep the old URL structure for compatibility or redirect */}
         </Routes>
       </main>

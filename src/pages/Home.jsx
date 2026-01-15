@@ -1,11 +1,26 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
+import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
 const Home = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     useEffect(() => {
         const revealElements = document.querySelectorAll('.reveal');
 
@@ -38,6 +53,7 @@ const Home = () => {
             <Hero />
             <About />
             <Skills />
+            <Experience />
             <Projects />
             <Contact />
         </div>

@@ -5,7 +5,7 @@ const Hero = () => {
                 <div className="hero-text reveal">
                     <span className="greeting">Bonjour, je suis</span>
                     <h1 className="name">Développeur Fullstack</h1>
-                    <p className="description">Spécialisé en Laravel, React, Vue, Python et Java. Je crée des solutions web
+                    <p className="description">Spécialisé en PHP/Laravel, JavaScript (React/Node.js) et Python. Je crée des solutions web
                         modernes, performantes et intuitives.</p>
                     <div className="cta-buttons">
                         <a href="#projects" className="btn btn-primary">Voir mes projets</a>

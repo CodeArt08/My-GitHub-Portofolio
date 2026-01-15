@@ -2,33 +2,205 @@ const Skills = () => {
     return (
         <section id="skills" className="section skills">
             <div className="container">
-                <h2 className="section-title reveal">Mes Compétences</h2>
-                <div className="skills-grid">
-                    <div className="skill-card reveal">
-                        <i className="fab fa-laravel"></i>
-                        <h3>Laravel</h3>
+                <h2 className="section-title reveal">Compétences</h2>
+
+                {/* Skills Categories Grid */}
+                <div className="skills-categories-grid">
+                    {/* Langages */}
+                    <div className="skill-category-card reveal">
+                        <h3>Langages</h3>
+                        <div className="skill-list">
+                            
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>JavaScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '90%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>PHP</span>
+                                    <span>80%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '80%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Java</span>
+                                    <span>70%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '70%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>C++</span>
+                                    <span>70%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '70%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>HTML/CSS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '95%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Python</span>
+                                    <span>85%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '85%' }}></div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div className="skill-card reveal">
-                        <i className="fab fa-react"></i>
-                        <h3>React</h3>
+
+                    {/* Frameworks */}
+                    <div className="skill-category-card reveal">
+                        <h3>Frameworks</h3>
+                        <div className="skill-list">
+                            
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>React</span>
+                                    <span>85%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '85%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Vue.js</span>
+                                    <span>75%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '75%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Laravel</span>
+                                    <span>75%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '75%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Node.js</span>
+                                    <span>75%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '75%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Express</span>
+                                    <span>70%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '70%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Flutter</span>
+                                    <span>70%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '70%' }}></div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div className="skill-card reveal">
-                        <i className="fab fa-vuejs"></i>
-                        <h3>Vue.js</h3>
-                    </div>
-                    <div className="skill-card reveal">
-                        <i className="fab fa-python"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <div className="skill-card reveal">
-                        <i className="fab fa-java"></i>
-                        <h3>Java</h3>
-                    </div>
-                    <div className="skill-card reveal">
-                        <i className="fas fa-database"></i>
-                        <h3>SQL / NoSQL</h3>
+
+                    {/* Outils */}
+                    <div className="skill-category-card reveal">
+                        <h3>Outils</h3>
+                        <div className="skill-list">
+                            
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Figma</span>
+                                    <span>80%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '80%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>Git</span>
+                                    <span>85%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '85%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>MySQL</span>
+                                    <span>80%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '80%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>PostgreSQL</span>
+                                    <span>75%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '75%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="mastery-item">
+                                <div className="mastery-header">
+                                    <span>MongoDB</span>
+                                    <span>70%</span>
+                                </div>
+                                <div className="progress-bar">
+                                    <div className="progress" style={{ width: '70%' }}></div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
     );

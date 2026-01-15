@@ -1,123 +1,44 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import ProjectDetailsLayout from '../components/ProjectDetailsLayout';
 
 const projectSlides = [
-    { id: 1, image: "/assets/images/img1.png", title: "Tableau de Bord", description: "Vue d'ensemble des activités de location." },
-    { id: 2, image: "/assets/images/img2.png", title: "Gestion des Véhicules", description: "Interface de gestion de la flotte de véhicules." },
-    { id: 3, image: "/assets/images/img3.png", title: "Suivi des Locations", description: "Suivi en temps réel des locations en cours." },
-    { id: 4, image: "/assets/images/img4.png", title: "Réservations", description: "Module de gestion des réservations clients." },
-    { id: 5, image: "/assets/images/img5.png", title: "Clients", description: "Base de données et gestion des clients." },
-    { id: 6, image: "/assets/images/img6.png", title: "Facturation", description: "Système de facturation et paiements." },
-    { id: 7, image: "/assets/images/img7.png", title: "Maintenance", description: "Suivi de la maintenance des véhicules." },
-    { id: 8, image: "/assets/images/img8.png", title: "Statistiques", description: "Rapports et analyses statistiques." },
-    { id: 9, image: "/assets/images/img9.png", title: "Paramètres", description: "Configuration de l'application." },
-    { id: 10, image: "/assets/images/img10.png", title: "Notifications", description: "Centre de notifications." },
-    { id: 11, image: "/assets/images/img11.png", title: "Profil Utilisateur", description: "Gestion du profil et des accès." },
+    { id: 1, image: "/assets/images/img1.png", title: "Portail de connexion sécurisé CarDiv", description: "Cette page permet aux utilisateurs d'accéder à leur espace personnel via un identifiant (e-mail) et un mot de passe. Le design utilise un arrière-plan immersif lié à l'automobile." },
+    { id: 2, image: "/assets/images/img2.png", title: "Page d'Accueil", description: "Il s'agit du point d'entrée du logiciel CarDiv, facilitant la location de voitures grâce à des raccourcis vers les véhicules, les locations, les réservations et la gestion client. Un bouton d'action rapide permet de vérifier directement la disponibilité des véhicules." },
+    { id: 3, image: "/assets/images/img3.png", title: "Gestion du parc automobile et catalogue", description: "Cette interface liste l'ensemble des véhicules avec leurs caractéristiques : marque, immatriculation, catégorie (citadine, prestige, etc.), carburant et prix journalier. Elle permet également d'ajouter de nouveaux véhicules au parc." },
+    { id: 4, image: "/assets/images/img4.png", title: "Détails du Véhicule", description: "Une fenêtre contextuelle affiche les détails spécifiques d'un véhicule sélectionné (comme une Opel R9 électrique), confirmant son statut actuel (ex: \"Loué\") et son tarif de 150€ par jour." },
+    { id: 5, image: "/assets/images/img5.png", title: "Statistiques globales et historique des locations", description: "Cette vue présente des indicateurs clés (KPI) tels que le total de véhicules (11), ceux en maintenance (1) ou disponibles (7). Un tableau détaillé récapitule l'historique des trajets avec les villes de départ/retour et le statut final de la location." },
+    { id: 6, image: "/assets/images/img6.png", title: "Formulaire de recherche de disponibilité", description: "Cette interface constitue la première étape du processus de location. Elle permet à l'utilisateur de définir les critères essentiels : les lieux de prise en charge et de retour, ainsi que les dates et heures précises de la location. Un encadré de conseils rappelle les règles de validité des dates." },
+    { id: 7, image: "/assets/images/img7.png", title: "Catalogue des résultats et filtres", description: "Une fois la recherche lancée, cette page affiche les véhicules disponibles sous forme de cartes. On y voit le modèle (Opel, Renault, Kia), le prix journalier et le type de carburant. Une barre latérale à gauche permet d'affiner la recherche par catégorie (Citadine, SUV, Luxe, etc.)." },
+    { id: 8, image: "/assets/images/img8.png", title: "Saisie des informations client (Partie 1/2)", description: "Première partie du formulaire de renseignements sur le locataire. L'utilisateur doit saisir son nom, son prénom, son numéro de carte d'identité nationale (CIN) et son adresse e-mail. Une barre de progression en haut indique l'avancement dans le processus de réservation." },
+    { id: 9, image: "/assets/images/img9.png", title: "Coordonnées de contact et détails de conduite (Partie 2/2)", description: "Ce second volet du formulaire client recueille le numéro de téléphone, l'adresse physique et le numéro du permis de conduire. L'utilisateur peut également choisir l'option \"avec ou sans chauffeur\" et doit confirmer qu'il respecte la tranche d'âge requise (26 à 65 ans)." },
+    { id: 10, image: "/assets/images/img10.png", title: "Résumé de la location avant finalisation", description: "Cette page présente une vue d'ensemble complète avant le paiement. Elle regroupe les informations du client, les détails techniques du véhicule (immatriculation, design), les dates de location et le calcul du prix total basé sur la durée. C'est l'étape de vérification finale." },
+    { id: 11, image: "/assets/images/img11.png", title: "Tableau de bord (Dashboard) analytique", description: "Une vue administrative ou de gestion affichant les indicateurs clés de performance (KPI). On y trouve le nombre total de véhicules par statut (disponibles, loués, en maintenance), un graphique des recettes sur les 5 dernières semaines, ainsi que les profils du \"Top Client\" et de la \"Top Voiture\"." },
 ];
 
 const RentalManagementDetails = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const meta = [
+        { icon: "fas fa-code", text: "React.js, Express.js, CSS" },
+        { icon: "fas fa-database", text: "MySQL" },
+        { icon: "fas fa-calendar", text: "2024" }
+    ];
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projectSlides.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + projectSlides.length) % projectSlides.length);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
-    }, []);
+    const description = (
+        <p>
+            Ce projet est une solution clé en main pour les agences de location de voitures. Il permet de centraliser toutes les opérations,
+            de la gestion du parc automobile à la facturation client, en passant par le suivi des réservations et la maintenance.
+            L'interface utilisateur a été conçue pour être intuitive et réactive, offrant une expérience fluide sur tous les appareils.
+        </p>
+    );
 
     return (
-        <div className="project-details-page">
-            <section className="section">
-                <div className="container">
-                    <Link to="/#projects" className="back-link"><i className="fas fa-arrow-left"></i> Retour aux projets</Link>
-
-                    <h1 className="project-title reveal active-reveal">Gestion des Locations de Véhicules</h1>
-                    <p className="project-subtitle reveal active-reveal">Une application web complète pour la gestion en temps réel d'une flotte de véhicules.</p>
-
-                    <div className="project-meta reveal active-reveal">
-                        <div className="meta-item">
-                            <i className="fas fa-code"></i>
-                            <span>React.js, Express.js</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-calendar"></i>
-                            <span>2024</span>
-                        </div>
-                    </div>
-
-                    <div className="carousel-container reveal active-reveal">
-                        <div className="carousel-wrapper">
-                            <AnimatePresence mode='wait'>
-                                <motion.div
-                                    key={currentIndex}
-                                    initial={{ opacity: 0, x: 100 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="carousel-slide"
-                                >
-                                    <div className="detail-block">
-                                        <h2>{projectSlides[currentIndex].title}</h2>
-                                        <div className="detail-image-container">
-                                            <img src={projectSlides[currentIndex].image} alt={projectSlides[currentIndex].title} className="detail-img" />
-                                        </div>
-                                        <p>{projectSlides[currentIndex].description}</p>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-
-                        <button className="carousel-btn prev" onClick={prevSlide}>
-                            <i className="fas fa-chevron-left"></i>
-                        </button>
-                        <button className="carousel-btn next" onClick={nextSlide}>
-                            <i className="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div className="carousel-dots">
-                            {projectSlides.map((slide, index) => (
-                                <span
-                                    key={slide.id}
-                                    className={`dot ${index === currentIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentIndex(index)}
-                                ></span>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="project-description reveal active-reveal" style={{ marginTop: '3rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
-                        <h3>À propos du projet</h3>
-                        <p>
-                            Ce projet est une solution clé en main pour les agences de location de voitures. Il permet de centraliser toutes les opérations,
-                            de la gestion du parc automobile à la facturation client, en passant par le suivi des réservations et la maintenance.
-                            L'interface utilisateur a été conçue pour être intuitive et réactive, offrant une expérience fluide sur tous les appareils.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-
-            <section className="section contact">
-                <div className="container reveal active-reveal">
-                    <h2 className="section-title">Intéressé par ce projet ?</h2>
-                    <div className="contact-content">
-                        <p>N'hésitez pas à me contacter pour discuter des fonctionnalités ou pour une démonstration.</p>
-                        <a href="mailto:votre.email@example.com" className="btn btn-primary">Me contacter</a>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <ProjectDetailsLayout
+            title="Gestion des Locations de Véhicules"
+            subtitle="Une application web complète pour la gestion en temps réel d'une flotte de véhicules."
+            meta={meta}
+            slides={projectSlides}
+            description={description}
+            contactText="N'hésitez pas à me contacter pour discuter des fonctionnalités ou pour une démonstration."
+            githubLink="https://github.com/CodeArt08/nara_project"
+        />
     );
 };
 

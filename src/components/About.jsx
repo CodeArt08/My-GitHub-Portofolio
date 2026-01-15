@@ -2,20 +2,47 @@ const About = () => {
     return (
         <section id="about" className="section about">
             <div className="container reveal">
-                <h2 className="section-title">À propos de moi</h2>
-                <div className="about-content">
-                    <p>
-                        Passionné par le développement informatique, je suis un développeur polyvalent maîtrisant à la
-                        fois le Back-end et le Front-end.
-                        Avec une solide expérience en <strong>Laravel</strong>, <strong>React</strong>,
-                        <strong>Vue.js</strong>, <strong>Python</strong> et <strong>Java</strong>,
-                        j'aime relever des défis techniques et concevoir des applications intuitives et robustes.
-                    </p>
-                    <p>
-                        Mon objectif est de transformer des idées complexes en solutions numériques élégantes.
-                        Que ce soit pour une application web, un logiciel ou une automatisation, je m'engage à fournir
-                        un code de qualité.
-                    </p>
+                <h2 className="section-title">À Propos</h2>
+                <div className="about-grid">
+                    <div className="about-left">
+                        <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-color)', marginBottom: '1rem' }}>HARIMBOAHANGY Mahaleo Ny Diary Vatosoa</h3>
+                        <p className="about-description">
+                            Je suis un développeur web passionné avec une formation complète en informatique.
+                            Mon objectif est de créer des applications web modernes, performantes et user-friendly.
+                        </p>
+
+                        <div className="info-grid">
+                            <div className="info-card">
+                                <span className="info-label">Email</span>
+                                <span className="info-value">mahaleonydiaty@gmail.com</span>
+                            </div>
+                            <div className="info-card">
+                                <span className="info-label">Localisation</span>
+                                <span className="info-value">Fianarantsoa, Madagascar</span>
+                            </div>
+                            <div className="info-card">
+                                <span className="info-label">Téléphone</span>
+                                <span className="info-value">+261 33 66 973 60</span>
+                            </div>
+                            <div className="info-card">
+                                <span className="info-label">Âge</span>
+                                <span className="info-value">21 ans</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="about-right">
+                        <div className="atouts-card">
+                            <h3>Atouts</h3>
+                            <ul className="atouts-list">
+                                <li>Dynamique</li>
+                                <li>Adaptabilité</li>
+                                <li>Travail en équipe</li>
+                                <li>Créatif</li>
+                                <li>Motivé</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

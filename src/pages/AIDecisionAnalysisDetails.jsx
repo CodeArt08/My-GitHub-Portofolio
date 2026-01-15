@@ -1,123 +1,46 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import ProjectDetailsLayout from '../components/ProjectDetailsLayout';
 
 const projectSlides = [
-    { id: 1, image: "/assets/images/photo1.png", title: "Collecte de Données", description: "Récupération automatique de données depuis les sites d'information et Facebook." },
-    { id: 2, image: "/assets/images/photo2.png", title: "Analyse IA", description: "Traitement des données avec LightGBM pour identifier les tendances et risques." },
-    { id: 3, image: "/assets/images/photo3.png", title: "Carte de Dangerosité", description: "Visualisation géographique des zones à risque identifiées par l'IA." },
-    { id: 4, image: "/assets/images/photo4.png", title: "Recommandations", description: "Suggestions de décisions intelligentes basées sur l'analyse." },
-    { id: 5, image: "/assets/images/photo5.png", title: "Tableau de Bord", description: "Interface de monitoring en temps réel des alertes et décisions." },
-    { id: 6, image: "/assets/images/photo6.png", title: "Rapports", description: "Génération de rapports détaillés pour la prise de décision." },
+    { id: 1, image: "/assets/images/photo1.png", title: "Interface des Suggestions Opérationnelles en Temps Réel", description: "Cette vue présente le module d'intelligence opérationnelle pour la zone active d'Ambalavao. L'IA affiche un niveau de risque maximal (5.0/5) et suggère une action prioritaire : « Établir un périmètre de sécurité ». On y voit un indice de confiance de 92 % pour cette recommandation, ainsi que des filtres pour trier les suggestions par urgence ou par type (préventive, organisationnelle, etc.)." },
+    { id: 2, image: "/assets/images/photo2.png", title: "Journal de l'Historique des Décisions Exécutées", description: "Cet écran récapitule les interventions passées et validées par le commandement. On y voit une liste chronologique de déploiements d'unités d'intervention dans les zones de Tanambao et Ambalakely. Chaque entrée est marquée du statut « EXECUTED » (Exécutée) avec une mention de l'urgence et l'heure précise de l'action." },
+    { id: 3, image: "/assets/images/photo3.png", title: "Tableau de Bord Statistique et Indicateurs de Performance", description: "Cette interface affiche les données chiffrées pour la zone d'Ambalavao. Elle met en avant des indicateurs clés (KPI) tels que le niveau de risque (5.0/5), le nombre d'agents déployés (8) et les points de contrôle actifs (4). Le graphique montre également une tendance à la hausse des incidents (+12 %) par rapport à la semaine précédente." },
+    { id: 4, image: "/assets/images/photo4.png", title: "Module d'Intégration de Rapports et Veille Médias", description: "L'image montre l'interface de saisie de rapports basée sur des sources externes. Ici, une publication Facebook de « 303 RADIO » concernant l'arrestation de suspects de vol de motos est en cours d'analyse. Ce module permet de lier des preuves visuelles et des témoignages issus des réseaux sociaux aux dossiers opérationnels." },
+    { id: 5, image: "/assets/images/photo5.png", title: "Registre de Collecte et Validation des Données", description: "Un tableau détaillé listant les « Données Validées » provenant de diverses sources (Web, Presse, Facebook). Les incidents sont classés par catégorie (vol, délit, agression, crime) et par lieu (Ampasambazaha, Tsianolondroa, etc.). Chaque ligne indique la sévérité de l'événement et permet des actions de gestion directe." },
+    { id: 6, image: "/assets/images/photo6.png", title: "Cartographie Tactique et Analyse de Chaleur (Heatmap)", description: "Une vue géographique de la région de Fianarantsoa utilisant un code couleur pour l'indice de danger (du vert au rouge). La carte identifie visuellement les foyers d'incidents, tandis qu'un panneau latéral liste les zones les plus critiques (Ambalavao, Ambatomena) avec leurs scores de risque respectifs générés par l'IA." },
 ];
 
 const AIDecisionAnalysisDetails = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const meta = [
+        { icon: "fas fa-code", text: "Python, React, LightGBM" },
+        { icon: "fas fa-brain", text: "Machine Learning" },
+        { icon: "fas fa-database", text: "MariaDB" },
+        { icon: "fas fa-calendar", text: "2025" }
+    ];
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projectSlides.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + projectSlides.length) % projectSlides.length);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
-    }, []);
+    const description = (
+        <>
+            <p>
+                Ce projet innovant combine l'intelligence artificielle et l'analyse de données pour fournir des insights stratégiques en temps réel.
+                En exploitant les données publiques issues des sites d'information et des réseaux sociaux comme Facebook, le système utilise
+                des algorithmes de machine learning (LightGBM) pour détecter les patterns, identifier les zones géographiques à risque,
+                et proposer des recommandations de décisions intelligentes aux décideurs.
+            </p>
+            <p>
+                L'application offre une interface React moderne permettant de visualiser les résultats sur une carte interactive,
+                de consulter les analyses en temps réel, et de générer des rapports détaillés pour faciliter la prise de décision stratégique.
+            </p>
+        </>
+    );
 
     return (
-        <div className="project-details-page">
-            <section className="section">
-                <div className="container">
-                    <Link to="/#projects" className="back-link"><i className="fas fa-arrow-left"></i> Retour aux projets</Link>
-
-                    <h1 className="project-title reveal active-reveal">Analyse de Données et Suggestion de Décision Intelligente basée sur l'IA</h1>
-                    <p className="project-subtitle reveal active-reveal">Une application intelligente qui analyse les données web et réseaux sociaux pour identifier les zones de dangerosité et recommander des décisions stratégiques.</p>
-
-                    <div className="project-meta reveal active-reveal">
-                        <div className="meta-item">
-                            <i className="fas fa-code"></i>
-                            <span>Python, React, LightGBM</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-brain"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-calendar"></i>
-                            <span>2024</span>
-                        </div>
-                    </div>
-
-                    <div className="carousel-container reveal active-reveal">
-                        <div className="carousel-wrapper">
-                            <AnimatePresence mode='wait'>
-                                <motion.div
-                                    key={currentIndex}
-                                    initial={{ opacity: 0, x: 100 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="carousel-slide"
-                                >
-                                    <div className="detail-block">
-                                        <h2>{projectSlides[currentIndex].title}</h2>
-                                        <div className="detail-image-container">
-                                            <img src={projectSlides[currentIndex].image} alt={projectSlides[currentIndex].title} className="detail-img" />
-                                        </div>
-                                        <p>{projectSlides[currentIndex].description}</p>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-
-                        <button className="carousel-btn prev" onClick={prevSlide}>
-                            <i className="fas fa-chevron-left"></i>
-                        </button>
-                        <button className="carousel-btn next" onClick={nextSlide}>
-                            <i className="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div className="carousel-dots">
-                            {projectSlides.map((slide, index) => (
-                                <span
-                                    key={slide.id}
-                                    className={`dot ${index === currentIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentIndex(index)}
-                                ></span>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="project-description reveal active-reveal" style={{ marginTop: '3rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
-                        <h3>À propos du projet</h3>
-                        <p>
-                            Ce projet innovant combine l'intelligence artificielle et l'analyse de données pour fournir des insights stratégiques en temps réel.
-                            En exploitant les données publiques issues des sites d'information et des réseaux sociaux comme Facebook, le système utilise
-                            des algorithmes de machine learning (LightGBM) pour détecter les patterns, identifier les zones géographiques à risque,
-                            et proposer des recommandations de décisions intelligentes aux décideurs.
-                        </p>
-                        <p>
-                            L'application offre une interface React moderne permettant de visualiser les résultats sur une carte interactive,
-                            de consulter les analyses en temps réel, et de générer des rapports détaillés pour faciliter la prise de décision stratégique.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-
-            <section className="section contact">
-                <div className="container reveal active-reveal">
-                    <h2 className="section-title">Intéressé par ce projet ?</h2>
-                    <div className="contact-content">
-                        <p>N'hésitez pas à me contacter pour discuter de solutions d'analyse intelligente basées sur l'IA.</p>
-                        <a href="mailto:votre.email@example.com" className="btn btn-primary">Me contacter</a>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <ProjectDetailsLayout
+            title="Analyse de Données et Suggestion de Décision Intelligente basée sur l'IA"
+            subtitle="Une application intelligente qui analyse les données web et réseaux sociaux pour identifier les zones de dangerosité et recommander des décisions stratégiques."
+            meta={meta}
+            slides={projectSlides}
+            description={description}
+            contactText="N'hésitez pas à me contacter pour discuter de solutions d'analyse intelligente basées sur l'IA."
+        />
     );
 };
 

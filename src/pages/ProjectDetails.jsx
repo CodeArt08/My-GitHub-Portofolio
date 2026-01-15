@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import ProjectDetailsLayout from '../components/ProjectDetailsLayout';
 
 const projectSlides = [
     {
@@ -30,99 +28,28 @@ const projectSlides = [
 ];
 
 const ProjectDetails = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const meta = [
+        { icon: "fas fa-code", text: "Laravel, React.js, Python, Tailwind CSS" },
+        { icon: "fas fa-database", text: "MySQL" },
+        { icon: "fas fa-calendar", text: "2024" }
+    ];
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projectSlides.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + projectSlides.length) % projectSlides.length);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(nextSlide, 5000); // Auto-play every 5 seconds
-        return () => clearInterval(interval);
-    }, []);
+    const description = (
+        <p>
+            Une plateforme intégrant l'Intelligence Artificielle et la géolocalisation pour optimiser les services opérationnels.
+            Ce projet vise à moderniser la gestion des opérations en fournissant des outils avancés de suivi et d'analyse.
+        </p>
+    );
 
     return (
-        <div className="project-details-page">
-            <section className="section">
-                <div className="container">
-                    <Link to="/#projects" className="back-link"><i className="fas fa-arrow-left"></i> Retour aux projets</Link>
-
-                    <h1 className="project-title reveal active-reveal">Désignation Intelligente de Service Opérationnel</h1>
-                    <p className="project-subtitle reveal active-reveal">Une plateforme intégrant l'Intelligence Artificielle et la
-                        géolocalisation pour optimiser les services opérationnels.</p>
-
-                    <div className="project-meta reveal active-reveal">
-                        <div className="meta-item">
-                            <i className="fas fa-code"></i>
-                            <span>Laravel, React.js, Python</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div className="meta-item">
-                            <i className="fas fa-calendar"></i>
-                            <span>2024</span>
-                        </div>
-                    </div>
-
-                    <div className="carousel-container reveal active-reveal">
-                        <div className="carousel-wrapper">
-                            <AnimatePresence mode='wait'>
-                                <motion.div
-                                    key={currentIndex}
-                                    initial={{ opacity: 0, x: 100 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="carousel-slide"
-                                >
-                                    <div className="detail-block">
-                                        <h2>{projectSlides[currentIndex].title}</h2>
-                                        <div className="detail-image-container">
-                                            <img src={projectSlides[currentIndex].image} alt={projectSlides[currentIndex].title} className="detail-img" />
-                                        </div>
-                                        <p>{projectSlides[currentIndex].description}</p>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-
-                        <button className="carousel-btn prev" onClick={prevSlide}>
-                            <i className="fas fa-chevron-left"></i>
-                        </button>
-                        <button className="carousel-btn next" onClick={nextSlide}>
-                            <i className="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div className="carousel-dots">
-                            {projectSlides.map((slide, index) => (
-                                <span
-                                    key={slide.id}
-                                    className={`dot ${index === currentIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentIndex(index)}
-                                ></span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="section contact">
-                <div className="container reveal active-reveal">
-                    <h2 className="section-title">Intéressé par ce projet ?</h2>
-                    <div className="contact-content">
-                        <p>N'hésitez pas à me contacter pour en savoir plus sur la conception et les défis techniques de
-                            cette réalisation.</p>
-                        <a href="mailto:votre.email@example.com" className="btn btn-primary">Me contacter</a>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <ProjectDetailsLayout
+            title="Désignation Intelligente de Service Opérationnel"
+            subtitle="Une plateforme intégrant l'Intelligence Artificielle et la géolocalisation pour optimiser les services opérationnels."
+            meta={meta}
+            slides={projectSlides}
+            description={description}
+            contactText="N'hésitez pas à me contacter pour en savoir plus sur la conception et les défis techniques de cette réalisation."
+        />
     );
 };
 
